@@ -36,10 +36,6 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.Holder>() {
         holder.render(data[position])
     }
 
-    fun setOnItemClickListener(listener:(item:SimpleMovieDto) -> Unit) {
-        onItemListener = listener
-    }
-
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         init {
@@ -51,7 +47,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.Holder>() {
         fun render(item: SimpleMovieDto) {
             itemView.imImgCover.loadImage(BuildConfig.IMAGE_URL + item.posterPath)
             itemView.imMovieTitle.text = item.title
-            itemView.imRate.text = item.voteAverage.toString()
+            itemView.imRate.text = itemView.context.getString(R.string.item_rating, item.voteAverage.toString())
         }
     }
 }
