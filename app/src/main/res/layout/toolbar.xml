@@ -23,6 +23,7 @@
                 tools:ignore="MissingConstraints"
                 tools:text="Title" app:layout_constraintEnd_toStartOf="@+id/tcImgSearch"
                 android:layout_marginEnd="8dp"
+                android:textSize="@dimen/title_size"
                 android:textColor="@android:color/white"/>
 
         <androidx.appcompat.widget.AppCompatImageView

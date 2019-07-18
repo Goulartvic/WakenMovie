@@ -8,7 +8,7 @@ interface MainContract {
     interface View : BaseView<Presenter> {
         fun showLoadingMovies()
         fun hideLoadingMovies()
-        fun onSuccessfulLoadMovies(games: List<SimpleMovieDto>)
+        fun onSuccessfulLoadMovies(movies: List<SimpleMovieDto>)
         fun onFailureLoadMovies(message: String)
     }
 
