@@ -1,27 +1,27 @@
-package com.tanheta.wakenmovie.data.feature.main
+package com.tanheta.wakenmovie.data.feature.movie
 
 import com.tanheta.wakenmovie.base.extensions.launch
 import com.tanheta.wakenmovie.data.model.whenever
 import com.tanheta.wakenmovie.data.remote.MovieRepository
 import kotlinx.coroutines.CoroutineDispatcher
 
-class MainPresenter(
-    override var view: MainContract.View,
+class MoviePresenter(
+    override var view: MovieContract.View,
     private val movieRepository: MovieRepository,
     private val dispatcherContext: CoroutineDispatcher
-) : MainContract.Presenter {
-    override fun loadMovies(page: Long) {
+) : MovieContract.Presenter {
+    override fun loadMovie(gameId: Long) {
         view.showLoadingMovies()
 
         dispatcherContext.launch {
-            movieRepository.getUpcomingMovies(page).whenever(
+            movieRepository.getMovie(gameId).whenever(
                 isBody = {
                     view.hideLoadingMovies()
-                    view.onSuccessfulLoadMovies(it.results)
+                    view.onSuccessfulLoadMovie(it)
                 },
                 isError = {
                     view.hideLoadingMovies()
-                    view.onFailureLoadMovies(it)
+                    view.onFailuereLoadMovie(it)
                 }
             )
         }
