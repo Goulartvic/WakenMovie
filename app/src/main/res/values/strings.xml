@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Wake n Movie</string>
+    <string name="app_title">Wake n Movie</string>
+    <string name="item_rating">Rate: %1$s</string>
 </resources>
