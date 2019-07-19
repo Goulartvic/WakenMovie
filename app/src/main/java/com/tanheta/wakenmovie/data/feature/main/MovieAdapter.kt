@@ -36,6 +36,10 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.Holder>() {
         holder.render(data[position])
     }
 
+    fun setOnItemClickListener(listener:(item:SimpleMovieDto) -> Unit) {
+        onItemListener = listener
+    }
+
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         init {

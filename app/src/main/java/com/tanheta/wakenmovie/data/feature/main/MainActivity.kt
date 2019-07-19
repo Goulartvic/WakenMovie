@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.tanheta.wakenmovie.R
 import com.tanheta.wakenmovie.base.extensions.isVisible
 import com.tanheta.wakenmovie.base.extensions.showToast
+import com.tanheta.wakenmovie.data.feature.movie.MovieActivity
 import com.tanheta.wakenmovie.data.model.dto.SimpleMovieDto
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.view.*
@@ -53,11 +54,14 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     private fun setupViews() {
         setSupportActionBar(mainToolbar as Toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
-        mainToolbar.tcTxtTitle.setText(R.string.app_title)
+        mainToolbar.tmTxtTitle.setText(R.string.app_name)
 
         mainRecMovies.layoutManager = GridLayoutManager(this, 2)
         setupScrollListener(mainRecMovies)
         mainRecMovies.adapter = adapter
+        adapter.setOnItemClickListener {
+            MovieActivity.startMovieActivity(this, it.id)
+        }
     }
 
     private fun setupScrollListener(recyclerView: RecyclerView) {

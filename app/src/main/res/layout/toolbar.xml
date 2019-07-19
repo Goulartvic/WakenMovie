@@ -14,20 +14,20 @@
         android:minHeight="?attr/actionBarSize">
 
         <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tcTxtTitle"
+                android:id="@+id/tmTxtTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="MissingConstraints"
-                tools:text="Title" app:layout_constraintEnd_toStartOf="@+id/tcImgSearch"
+                tools:text="Title" app:layout_constraintEnd_toStartOf="@+id/tmImgSearch"
                 android:layout_marginEnd="8dp"
                 android:textSize="@dimen/title_size"
                 android:textColor="@android:color/white"/>
 
         <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/tcImgSearch"
+                android:id="@+id/tmImgSearch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"

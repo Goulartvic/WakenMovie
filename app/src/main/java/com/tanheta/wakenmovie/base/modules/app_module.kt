@@ -3,8 +3,9 @@ package com.tanheta.wakenmovie.base.modules
 import com.google.gson.GsonBuilder
 import com.tanheta.wakenmovie.data.feature.main.MainContract
 import com.tanheta.wakenmovie.data.feature.main.MainPresenter
+import com.tanheta.wakenmovie.data.feature.movie.MovieContract
+import com.tanheta.wakenmovie.data.feature.movie.MoviePresenter
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main
 import org.koin.dsl.module.module
 import retrofit2.Converter
@@ -18,6 +19,14 @@ val appModule = module {
             dispatcherContext = get()
         )
     } bind MainContract.Presenter::class
+
+    factory { (view: MovieContract.View) ->
+        MoviePresenter(
+            view = view,
+            movieRepository = get(),
+            dispatcherContext = get()
+        )
+    } bind MovieContract.Presenter::class
 }
 
 val featureModule = module {

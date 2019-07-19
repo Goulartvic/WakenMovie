@@ -19,7 +19,6 @@ android {
         def tmdbApiKey = properties.getProperty("tmdb_api_key", "")
 
         buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/3/\""
-        buildConfigField "String", "SERVICE_ATHORIZATION_KEY", "\"c5850ed73901b8d268d0898a8a9d8bff\""
         buildConfigField "String", "IMAGE_URL", "\"https://image.tmdb.org/t/p/w500\""
         buildConfigField "String", "TMDB_API_KEY", tmdbApiKey
     }
